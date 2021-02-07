@@ -5,8 +5,6 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
-// const db = require("./models");
-
 const app = express();
 
 app.use(logger("dev"));
@@ -24,7 +22,7 @@ mongoose.connect(
     }
   );
 
-require("./routes/api.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 app.listen(PORT, () => {
